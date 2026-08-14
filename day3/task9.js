@@ -1,3 +1,4 @@
+// add or delete key in object
 var student = {
     name: "Sarthak",
     id: 101,
