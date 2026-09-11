@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+  <h3>Sum of nums</h3>
+  <input type="text" id="numInput" placeholder="10, 20, 30" />
+  <button onclick="sum_nums()">Calculate</button>
+
+  <p id="result"></p>
+
+  <script>
+    function sum(...nums) {
+      let total = 0;
+      for (let n of nums) total += n;
+      return total;
+    }
+    function sum_nums() {
+      const items = document.getElementById("numInput").value.split(/[\s,]+/);
+      const parsed = [];
+      for (let item of items) {
+        const val = parseInt(item, 10);
+        if (!isNaN(val)) parsed.push(val);
+      }
+      document.getElementById("result").innerText = "Total: " + sum(...parsed);
+    }
+  </script>
+
+</body>
+</html>
